@@ -26,9 +26,7 @@ if __name__ == "__main__":
     profiler = UserConfigurableProfiler(profile_dataset=validator)
     profiler.build_suite()
 
-    validator.save_expectation_suite(
-        "great_expectations/expectations/expectation_suite_demo.json"
-    )
+    validator.save_expectation_suite()
 
     # --- VALIDATE DATA --- #
 
