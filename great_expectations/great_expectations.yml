@@ -1,9 +1,9 @@
 config_version: 3.0
 
 datasources:
-  filesystem_pandas_demo_datasource:
+  filesystem_pandas_datasource_demo:
     data_connectors:
-      filesystem_pandas_demo_data_connector:
+      filesystem_pandas_data_connector_demo:
         base_directory: ../data
         default_regex:
           group_names:
