@@ -1,6 +1,7 @@
 config_version: 3.0
 
 datasources:
+  # --- File System -- #
   filesystem_pandas_datasource_demo:
     data_connectors:
       filesystem_pandas_data_connector_demo:
@@ -21,6 +22,24 @@ datasources:
       class_name: PandasExecutionEngine
     class_name: Datasource
     module_name: great_expectations.datasource
+
+  # --- Postgres DB -- #
+  postgres_datasource_demo:
+    class_name: Datasource
+    module_name: great_expectations.datasource
+    execution_engine:
+      module_name: great_expectations.execution_engine
+      class_name: SqlAlchemyExecutionEngine
+      credentials:
+        drivername: postgresql
+        host: localhost
+        port: 5432
+        username: postgres
+        password: postgres
+        database: postgres
+    data_connectors:
+      postgres_data_connector_demo:
+        class_name: InferredAssetSqlDataConnector
 
 config_variables_file_path: uncommitted/config_variables.yml
 

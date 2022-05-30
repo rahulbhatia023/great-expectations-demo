@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     validator = context.get_validator(
         batch_request=batch_request_source,
-        create_expectation_suite_with_name="expectation_suite_demo",
+        create_expectation_suite_with_name="expectation_suite_profiler_demo",
     )
 
     profiler = UserConfigurableProfiler(profile_dataset=validator)
@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     # --- VALIDATE DATA --- #
 
-    result = context.run_checkpoint(checkpoint_name="checkpoint_demo")
+    result = context.run_checkpoint(checkpoint_name="checkpoint_expectation_suite_profiler_demo")
 
     # --- CREATE DATA DOCS --- #
 
