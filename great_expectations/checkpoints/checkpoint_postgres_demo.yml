@@ -14,7 +14,7 @@ validations:
       - name: send_slack_notification_on_validation_result
         action:
           class_name: SlackNotificationAction
-          slack_webhook: https://hooks.slack.com/services/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
+          slack_webhook: ${validation_notification_slack_webhook}
           notify_on: all
           renderer:
             module_name: great_expectations.render.renderer.slack_renderer
