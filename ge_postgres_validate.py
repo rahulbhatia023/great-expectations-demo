@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     # --- VALIDATE DATA --- #
 
-    result = context.run_checkpoint(checkpoint_name="checkpoint_filesystem_demo")
+    result = context.run_checkpoint(checkpoint_name="checkpoint_postgres_demo")
 
     # --- CREATE DATA DOCS --- #
 

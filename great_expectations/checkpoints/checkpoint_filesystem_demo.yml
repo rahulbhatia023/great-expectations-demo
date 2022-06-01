@@ -1,4 +1,4 @@
-name: checkpoint_expectation_suite_demo
+name: checkpoint_filesystem_demo
 config_version: 1.0
 class_name: SimpleCheckpoint
 run_name_template: "%Y%m%d-%H%M%S-my-run-name-template"

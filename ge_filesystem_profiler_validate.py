@@ -30,7 +30,9 @@ if __name__ == "__main__":
 
     # --- VALIDATE DATA --- #
 
-    result = context.run_checkpoint(checkpoint_name="checkpoint_expectation_suite_profiler_demo")
+    result = context.run_checkpoint(
+        checkpoint_name="checkpoint_filesystem_profiler_demo"
+    )
 
     # --- CREATE DATA DOCS --- #
 

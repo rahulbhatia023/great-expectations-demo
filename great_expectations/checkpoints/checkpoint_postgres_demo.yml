@@ -1,0 +1,12 @@
+name: checkpoint_postgres_demo
+config_version: 1.0
+class_name: SimpleCheckpoint
+run_name_template: "%Y%m%d-%H%M%S-my-run-name-template"
+validations:
+  - batch_request:
+      datasource_name: postgres_datasource_demo
+      data_connector_name: postgres_data_connector_demo
+      data_asset_name: yellow_tripdata_sample_2019_02
+      data_connector_query:
+        index: -1
+    expectation_suite_name: expectation_suite_demo

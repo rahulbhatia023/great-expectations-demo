@@ -25,6 +25,9 @@ datasources:
 
   # --- Postgres DB -- #
   postgres_datasource_demo:
+    data_connectors:
+      postgres_data_connector_demo:
+        class_name: InferredAssetSqlDataConnector
     class_name: Datasource
     module_name: great_expectations.datasource
     execution_engine:
@@ -37,9 +40,6 @@ datasources:
         username: postgres
         password: postgres
         database: postgres
-    data_connectors:
-      postgres_data_connector_demo:
-        class_name: InferredAssetSqlDataConnector
 
 config_variables_file_path: uncommitted/config_variables.yml
 
