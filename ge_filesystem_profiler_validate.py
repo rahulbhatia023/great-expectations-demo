@@ -11,7 +11,6 @@ if __name__ == "__main__":
     context = DataContext()
 
     # --- CREATE EXPECTATIONS --- #
-
     batch_request_source = BatchRequest(
         datasource_name="filesystem_pandas_datasource_demo",
         data_connector_name="filesystem_pandas_data_connector_demo",
@@ -29,19 +28,8 @@ if __name__ == "__main__":
     validator.save_expectation_suite()
 
     # --- VALIDATE DATA --- #
-
-    result = context.run_checkpoint(
-        checkpoint_name="checkpoint_filesystem_profiler_demo"
-    )
+    context.run_checkpoint(checkpoint_name="checkpoint_filesystem_profiler_demo")
 
     # --- CREATE DATA DOCS --- #
-
     context.build_data_docs()
     context.open_data_docs()
-
-    if not result["success"]:
-        print("Validation failed!")
-        sys.exit(1)
-
-    print("Validation succeeded!")
-    sys.exit(0)
