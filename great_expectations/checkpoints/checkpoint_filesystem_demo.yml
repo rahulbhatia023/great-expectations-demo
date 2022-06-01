@@ -10,3 +10,12 @@ validations:
       data_connector_query:
         index: -1
     expectation_suite_name: expectation_suite_demo
+    action_list:
+        - name: send_slack_notification_on_validation_result
+          action:
+            class_name: SlackNotificationAction
+            slack_webhook: ${validation_notification_slack_webhook}
+            notify_on: all
+            renderer:
+              module_name: great_expectations.render.renderer.slack_renderer
+              class_name: SlackRenderer
