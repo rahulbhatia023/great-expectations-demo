@@ -1,5 +1,3 @@
-import sys
-
 from great_expectations.core.batch import BatchRequest
 from great_expectations.profile.user_configurable_profiler import (
     UserConfigurableProfiler,
@@ -11,15 +9,18 @@ if __name__ == "__main__":
     context = DataContext()
 
     # --- CREATE EXPECTATIONS --- #
-    batch_request_source = BatchRequest(
-        datasource_name="filesystem_pandas_datasource_demo",
-        data_connector_name="filesystem_pandas_data_connector_demo",
-        data_asset_name="yellow_tripdata_sample_2019-01.csv",
+    context.create_expectation_suite(
+        expectation_suite_name="expectation_suite_profiler_demo",
+        overwrite_existing=True,
     )
 
     validator = context.get_validator(
-        batch_request=batch_request_source,
-        create_expectation_suite_with_name="expectation_suite_profiler_demo",
+        batch_request=BatchRequest(
+            datasource_name="filesystem_pandas_datasource_demo",
+            data_connector_name="filesystem_pandas_data_connector_demo",
+            data_asset_name="yellow_tripdata_sample_2019-01.csv",
+        ),
+        expectation_suite_name="expectation_suite_profiler_demo",
     )
 
     profiler = UserConfigurableProfiler(profile_dataset=validator)

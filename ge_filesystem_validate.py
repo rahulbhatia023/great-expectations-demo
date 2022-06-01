@@ -1,5 +1,3 @@
-import sys
-
 from great_expectations import DataContext
 
 if __name__ == "__main__":
