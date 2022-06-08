@@ -6,7 +6,7 @@ validations:
   - batch_request:
       datasource_name: filesystem_pandas_datasource_demo
       data_connector_name: filesystem_pandas_data_connector_demo
-      data_asset_name: yellow_tripdata_sample_2019-02.csv
+      data_asset_name: yellow_tripdata_sample_2019-01.csv
     expectation_suite_name: expectation_suite_profiler_demo
     action_list:
       - name: send_slack_notification_on_validation_result
