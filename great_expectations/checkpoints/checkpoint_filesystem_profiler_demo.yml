@@ -1,14 +1,12 @@
 name: checkpoint_filesystem_profiler_demo
 config_version: 1.0
 class_name: SimpleCheckpoint
-run_name_template: "%Y%m%d-%H%M%S-my-run-name-template"
+run_name_template: "%Y%m%d-%H%M%S-filesystem-profiler-demo"
 validations:
   - batch_request:
       datasource_name: filesystem_pandas_datasource_demo
       data_connector_name: filesystem_pandas_data_connector_demo
       data_asset_name: yellow_tripdata_sample_2019-02.csv
-      data_connector_query:
-        index: -1
     expectation_suite_name: expectation_suite_profiler_demo
     action_list:
       - name: send_slack_notification_on_validation_result
